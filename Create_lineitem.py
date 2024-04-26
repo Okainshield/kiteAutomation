@@ -131,6 +131,5 @@ for li_element in li_elements:
         li_element.click()
         break
 time.sleep(5)
-
-
+print("hii")
 driver.quit()
