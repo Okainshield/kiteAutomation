@@ -9,7 +9,7 @@ from selenium.common.exceptions import TimeoutException
 # Opening the Chrome
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 30)
-driver.get('https://kite.kidscorp.digital/')
+driver.get('https://kite-qa2.kidscorp.digital/')
 driver.maximize_window()
 
 # Login Details

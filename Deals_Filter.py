@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as ec
 # Opening the Chrome
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 60)
-driver.get('https://kite.kidscorp.digital/')
+driver.get('https://kite-qa2.kidscorp.digital/')
 driver.maximize_window()
 
 # Login Details

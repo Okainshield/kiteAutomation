@@ -7,7 +7,7 @@ from selenium.common.exceptions import TimeoutException
 # Setup WebDriver
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 30)
-driver.get('https://kite.kidscorp.digital/home')
+driver.get('https://kite-qa2.kidscorp.digital/')
 driver.maximize_window()
 
 # List of test cases

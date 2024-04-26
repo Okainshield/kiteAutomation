@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import TimeoutException
+# from selenium.common.exceptions import TimeoutException
 
 
 def clear_form_data():
@@ -24,7 +24,7 @@ def clear_form_data():
 # Opening the Chrome
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 10)
-driver.get('https://kite.kidscorp.digital/')
+driver.get('https://kite-qa2.kidscorp.digital/')
 driver.maximize_window()
 
 # Login Details

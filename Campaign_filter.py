@@ -2,16 +2,18 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
+import pytest
+
 
 # Opening the Chrome
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 30)
-driver.get('https://kite.kidscorp.digital/')
+driver.get('https://kite-qa2.kidscorp.digital/')
 driver.maximize_window()
 
 # Login Details
-wait.until(EC.visibility_of_element_located((By.NAME, "email")))
+wait.until(ec.visibility_of_element_located((By.NAME, "email")))
 username = driver.find_element(By.NAME, "email")
 username.send_keys("fermin@kidscorp.digital")
 time.sleep(5)
@@ -24,12 +26,12 @@ btnLogin.click()
 time.sleep(5)
 
 # Wait for the Campaign Manager element to be clickable and then click it
-element = wait.until(EC.element_to_be_clickable((By.XPATH, "//li[@title='Campaign Manager']")))
+element = wait.until(ec.element_to_be_clickable((By.XPATH, "//li[@title='Campaign Manager']")))
 element.click()
 time.sleep(10)
 
 # Click on the Deal ID row
-rows = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//tr[contains(@style, 'cursor: pointer;')]")))
+rows = wait.until(ec.presence_of_all_elements_located((By.XPATH, "//tr[contains(@style, 'cursor: pointer;')]")))
 row_element = rows[3]  # Click on the fourth element (index 4)
 row_element.click()
 time.sleep(5)
@@ -56,7 +58,7 @@ for scenario in scenarios:
 
     if 'Status' in scenario:
         # Select the new status
-        status_option = wait.until(EC.element_to_be_clickable((By.XPATH, f"//a[contains(text(), '{scenario['Status']}')]")))
+        status_option = wait.until(ec.element_to_be_clickable((By.XPATH, f"//a[contains(text(), '{scenario['Status']}')]")))
         status_option.click()
 
     # Enter the new date
